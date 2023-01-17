@@ -1,10 +1,22 @@
 import { Button, Form, Input } from 'antd';
 import React, {FC} from 'react';
 import { rules } from '../utils/rules';
+import { AuthActionCreators } from '../store/reducers/auth/action-creators';
+import { useDispatch } from 'react-redux';
 
 const LoginForm:FC = () => {
+    const dispatch= useDispatch();
+
+    const sumbit = () => {
+        console.log('submit')
+        dispatch(AuthActionCreators.login("", ""))
+    }
     return (
-        <Form>
+        <Form
+            onFinish={sumbit}
+            // onFinishFailed={onFinishFailed}
+            autoComplete="off"
+            >
             <Form.Item
             label="Name"
             name="username"
