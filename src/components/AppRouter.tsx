@@ -1,14 +1,12 @@
 import React, {FC} from 'react';
-import { Route, Routes,redirect } from "react-router";
+import { Route, Routes } from "react-router";
 import { privateRoutes } from '../router';
 import { publicRoutes } from '../router';
-import { useSelector } from 'react-redux';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 
 const AppRouter:FC = () => {
     const {isAuth}= useTypedSelector(state=> state.auth);
     return (
-        
             isAuth ? (
                 <Routes>
                     {privateRoutes.map((route) => (
@@ -35,7 +33,6 @@ const AppRouter:FC = () => {
                     
                 </Routes>
             )
-        
     );
 };
 
