@@ -7,14 +7,14 @@ import { useDispatch } from 'react-redux';
 const LoginForm:FC = () => {
     const dispatch= useDispatch();
 
-    const sumbit = () => {
-        console.log('submit')
-        dispatch(AuthActionCreators.login("", ""))
+    const submit = () => {
+        dispatch(AuthActionCreators.login('dfwef', 'fwfw'));
+
+
     }
     return (
         <Form
-            onFinish={sumbit}
-            // onFinishFailed={onFinishFailed}
+            onFinish={submit}
             autoComplete="off"
             >
             <Form.Item
